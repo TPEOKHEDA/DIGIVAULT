@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Kheda Edu Portal</title>
+    
+    <link rel="manifest" href="manifest.json">
+    
+    <meta name="theme-color" content="#1e40af">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Kheda Portal">
+    <link rel="apple-touch-icon" href="icon.png">
+    
+    <style>
+        /* Removes all browser borders and prevents bouncy scrolling */
+        body, html { 
+            margin: 0; 
+            padding: 0; 
+            height: 100%; 
+            width: 100%;
+            overflow: hidden; 
+            background-color: #f8fafc; 
+            overscroll-behavior-y: none;
+        }
+        iframe { 
+            border: none; 
+            width: 100%; 
+            height: 100%; 
+            display: block; 
+        }
+    </style>
+</head>
+<body>
+    <iframe src="https://script.google.com/macros/s/AKfycbw6uyr1iscFB2uEIvEjqdWd0ygHl9mci9DinmG9lvcTbxo4nkIN7JsWBflNMaTNyBk7lw/exec" allow="camera; microphone; fullscreen; clipboard-read; clipboard-write"></iframe>
+    
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(registration => console.log('ServiceWorker registered'))
+                    .catch(err => console.log('ServiceWorker registration failed: ', err));
+            });
+        }
+    </script>
+</body>
+</html>
